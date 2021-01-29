@@ -95,7 +95,16 @@ pop();
 
 textSize(20);
 fill("lightgreen");
-text(hr  + ":" + mn + ":" + sc,360,205);
+
+
+if(sc < 10) {
+  text(hr % 12  + ":0" + mn + ":0" + sc,360,205);
+} else if(mn < 10 && sc > 9) {
+  text(hr % 12 + ":0" + mn + ":" + sc,360,205);
+} else {
+  text(hr % 12 + ":" + mn + ":" + sc,360,205);
+}
+
 
 
 
